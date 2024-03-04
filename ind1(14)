@@ -7,9 +7,15 @@ while num != 0:
 print(f"Получено {len(numbers)} чисел")
 
 max_height = 0
+temp1 = maxi = 0
 for i in range(1, len(numbers)):
     height = numbers[i] - numbers[i-1]
-    if height > max_height:
-        max_height = height
+    if height > 0:
+        max_height += height
+    else:
+        temp1 = max_height
+        max_height = 0
+        if temp1 > maxi:
+            maxi = temp1
 
-print(f"Наибольшая высота подъема: {max_height}")
+print(f"Наибольшая высота подъема: {maxi}")
