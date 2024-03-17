@@ -9,18 +9,13 @@
 
 with open('input.txt', 'r') as file:
     data = file.readlines()
-
 n = int(data[0])
 teams = {}
-
-# Обрабатываем информацию о командах
 for i in range(1, n+1):
-    team, points = data[i].strip().split()
+    team, points = data[i].split()
     teams[team] = int(points)
-
-# Обрабатываем результаты матчей
 for match in data[n+1:]:
-    team1, team2, result = match.strip().split()
+    team1, team2, result = match.split()
     if result == 'win':
         teams[team1] += 3
     elif result == 'draw':
@@ -28,10 +23,6 @@ for match in data[n+1:]:
         teams[team2] += 1
     else:
         teams[team2] += 3
-
-# Сортируем список команд по убыванию набранных очков и лексикографическому порядку
 sorted_teams = sorted(teams.items(), key=lambda x: (-x[1], x[0]))
-
-# Выводим результат
 for team, points in sorted_teams:
     print(team, points)
