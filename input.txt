@@ -1,0 +1,14 @@
+6
+TeamA 0
+TeamB 0
+TeamC 0
+TeamD 0
+TeamE 0
+TeamF
+TeamA TeamC win
+TeamB TeamD lose
+TeamE TeamF draw
+TeamA TeamD lose
+TeamB TeamC win
+TeamE TeamF lose
+TeamD TeamD win
