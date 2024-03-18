@@ -23,6 +23,6 @@ for match in data[n+1:]:
         teams[team2] += 1
     else:
         teams[team2] += 3
-sorted_teams = sorted(teams.items(), key=lambda x: (-x[1], x[0]))
+sorted_teams = sorted(teams.items(), key=lambda x: (-x[1], x[0])) #сортировка кортежей при помощи лямбда-функции сначала по убыванию очков(-x[1]), потом по алфавиту(x[0])
 for team, points in sorted_teams:
     print(team, points)
