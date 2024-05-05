@@ -37,10 +37,8 @@ for line in lines:
     votes.append(int(vote))
     total_votes += int(vote)
 
-# Первое избирательное
 first_izb = total_votes / 450
 
-# Количество мест для каждой партии
 seats = []
 for vote in votes:
     seats.append(vote // first_izb)
@@ -62,5 +60,5 @@ if(remaining_seats > 0):
 
 with open("output.txt", 'w') as f:
     for i in range(len(parties)):
-        f.write(f"{parties[i]}: {seats[i]}\n")
+        f.write(parties[i] + ": "+ str(seats[i]) + "\n")
 
